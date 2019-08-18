@@ -1,0 +1,19 @@
+{
+  "name": "presscraft",
+  "version": "0.0.0",
+  "description": "Create impress.js presentations with predesigned transitions from files.",
+  "main": "index.js",
+  "bin": {
+    "presscraft": "./bin/presscraft.js"
+  },
+  "repository": "https://github.com/KaivnD/presscraft.git",
+  "author": "KaivnD <KaivnD@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ."
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "marked": "^0.7.0"
+  }
+}
