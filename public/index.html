@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/fonts/font.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+</head>
+<body>
+    <div id="impress" data-autoplay="0"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/impress.js"></script>
+    <script>
+        const socket = io();
+        const setContent = content => {
+            let app = document.querySelector('#impress');
+            app.innerHTML = content.replace(/\&lt;\!\-\-.*\-\-\&gt;/g, '');
+            impress().init();
+        }
+        socket.on('onload', content => setContent(content));
+        socket.on('reload', content => location.reload());
+    </script>
+</body>
+</html>

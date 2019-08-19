@@ -6,6 +6,11 @@
   "bin": {
     "presscraft": "./bin/presscraft.js"
   },
+  "files": [
+    "bin",
+    "src",
+    "public"
+  ],
   "repository": "https://github.com/KaivnD/presscraft.git",
   "author": "KaivnD <KaivnD@hotmail.com>",
   "license": "MIT",
@@ -13,7 +18,13 @@
     "dev": "node ."
   },
   "dependencies": {
+    "chokidar": "^3.0.2",
+    "commander": "^3.0.0",
     "express": "^4.17.1",
-    "marked": "^0.7.0"
+    "impress.js": "^1.0.0",
+    "markdown-it": "^9.1.0",
+    "markdown-it-attrs": "^3.0.1",
+    "open": "^6.4.0",
+    "socket.io": "^2.2.0"
   }
 }
