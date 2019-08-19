@@ -1,10 +1,11 @@
 const commander = require('commander')
 const program = new commander.Command()
+const PressCraft = require('../src/PressCraft')
 
 program
-  .command('file')
-  .alias('f')
-  .description('MarkDown文件')
-  .action(() => {})
+  .option('-f, --file [string]', 'file')
+  .option('-p, --port [string]', 'port')
+  .parse(process.argv)
 
-program.parse(process.argv)
+const app = new PressCraft(program.file, program.port)
+app.run()
