@@ -37,30 +37,3 @@ In case you're using yarn
 ```bash
 yarn add presscraft -D
 ```
-
-```Javascript
-const express = require('express')
-const app = new express()
-const http = require('http').createServer(app)
-const log4js = require('log4js');
-const logger = log4js.getLogger();
-log4js.configure({
-  appenders: { console: { type: 'console' } },
-  categories: { default: { appenders: ['console'], level: 'info' } }
-})
-
-module.exports = function (file, port) {
-  chokidar.watch(file).on('change', () => {
-    io.sockets.emit('reload')
-    logger.info(`${file} is changed, reloading...`)
-  })
-  const root = path.resolve(__dirname, '..')
-  app.use('/static', express.static(path.resolve(path.join(root, 'public'))))
-  http.listen(port, () => {
-    const url = `http://localhost:${port}`
-    logger.info(`PressCraft is actived, See ${url}`)
-    open(url)
-  })
-}
-
-```
