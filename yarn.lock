@@ -125,13 +125,6 @@ chokidar@^3.0.2:
   optionalDependencies:
     fsevents "^2.0.6"
 
-chrome-opn@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/chrome-opn/-/chrome-opn-1.0.1.tgz#a658281fb6209afe51d59fdf94b23acccbc2f261"
-  integrity sha512-/zMCC8/rI8YhyKJKfSEbUlgemxvhaxSVbVB3tAlLnunbI5Z9VWydnlhFJlh/p0Jpga60d0qv/wSzEHB9YxhMEQ==
-  dependencies:
-    opn "^5.4.0"
-
 commander@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/commander/-/commander-3.0.0.tgz#0641ea00838c7a964627f04cddc336a2deddd60a"
@@ -554,13 +547,6 @@ open@^6.4.0:
   version "6.4.0"
   resolved "https://registry.npmjs.org/open/-/open-6.4.0.tgz#5c13e96d0dc894686164f18965ecfe889ecfc8a9"
   integrity sha512-IFenVPgF70fSm1keSd2iDBIDIBZkroLeuffXq+wKTzTJlBpesFWojV9lb8mzOfaAzM1sr7HQHuO0vtV0zYekGg==
-  dependencies:
-    is-wsl "^1.1.0"
-
-opn@^5.4.0:
-  version "5.5.0"
-  resolved "https://registry.npmjs.org/opn/-/opn-5.5.0.tgz#fc7164fab56d235904c51c3b27da6758ca3b9bfc"
-  integrity sha512-PqHpggC9bLV0VeWcdKhkpxY+3JTzetLSqTCWL/z/tFIbI6G8JCjondXklT1JinczLz2Xib62sSp0T/gKT4KksA==
   dependencies:
     is-wsl "^1.1.0"
 

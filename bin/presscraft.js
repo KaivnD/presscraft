@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const commander = require('commander')
 const program = new commander.Command()
 const PressCraft = require('../src/PressCraft')
@@ -7,5 +8,4 @@ program
   .option('-p, --port [string]', 'port')
   .parse(process.argv)
 
-const app = new PressCraft(program.file, program.port)
-app.run()
+PressCraft(program.file, program.port)
