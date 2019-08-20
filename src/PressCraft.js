@@ -6,9 +6,18 @@ const path = require('path')
 const chokidar = require('chokidar')
 const convertToHtml = require('./lib')
 const open = require('open')
+const log4js = require('log4js');
+const logger = log4js.getLogger();
+log4js.configure({
+  appenders: { console: { type: 'console' } },
+  categories: { default: { appenders: ['console'], level: 'info' } }
+})
 
-module.exports = function(file, port) {
-  chokidar.watch(file).on('change', () => io.sockets.emit('reload'))
+module.exports = function (file, port) {
+  chokidar.watch(file).on('change', () => {
+    io.sockets.emit('reload')
+    logger.info(`${file} is changed, reloading...`)
+  })
   const root = path.resolve(__dirname, '..')
   app.use('/static', express.static(path.resolve(path.join(root, 'public'))))
   app.get('/', (req, res) =>
@@ -27,5 +36,9 @@ module.exports = function(file, port) {
   app.get('/impress.css', (req, res) =>
     res.sendFile(path.resolve('./node_modules/impress.js/css/impress-demo.css'))
   )
-  http.listen(port, () => open(`http://localhost:${port}`))
+  http.listen(port, () => {
+    const url = `http://localhost:${port}`
+    logger.info(`PressCraft is actived, See ${url}`)
+    open(url)
+  })
 }
