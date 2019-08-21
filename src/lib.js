@@ -15,7 +15,7 @@ const getMetaData = content => {
   }
   var metaData = []
   var metaArr = match[1].split(/\s+/)
-  metaArr.forEach(function(meta) {
+  metaArr.forEach(function (meta) {
     var kv = meta.split('=')
     metaData.push([
       kv[0].replace(/^data-/, ''),
@@ -23,16 +23,16 @@ const getMetaData = content => {
     ])
   })
   return metaData
-    .map(function(meta) {
+    .map(function (meta) {
       return 'data-' + meta[0] + '="' + meta[1] + '"'
     })
     .join(' ')
 }
 
-module.exports = function(path) {
+module.exports = function (path) {
   var contentArr = String(fs.readFileSync(path)).split(/^-{6,}$/m)
   var html = ''
-  contentArr.forEach(function(content) {
+  contentArr.forEach(function (content) {
     var metaData = getMetaData(content)
     var tmp = '<div class="step"'
     if (metaData) {
