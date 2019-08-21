@@ -1,6 +1,6 @@
 {
   "name": "presscraft",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Create impress.js presentations with predesigned transitions from files.",
   "main": "index.js",
   "bin": {
