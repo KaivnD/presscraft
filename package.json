@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "impress.js": "^1.0.0",
     "log4js": "^5.0.0",
-    "markdown-it": "^9.1.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-attrs": "^3.0.1",
     "open": "^6.4.0",
     "socket.io": "^2.2.0"
